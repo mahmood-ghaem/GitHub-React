@@ -1,0 +1,412 @@
+/* 
+*  CSS TABLE OF CONTENTS
+*   
+*  1.0 - Fonts
+*  2.0 - Reset
+*  3.0 - Globals
+*  4.0 - Root Container
+*  5.0 - Header
+*  6.0 - Main
+*  7.0 - Footer
+*  8.0 - Media Query and Animation
+*
+*/
+
+/******************** 1.0 - Fonts ********************/
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+/******************** 2.0 - Reset ********************/
+:root {
+  /* https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97 */
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/******************** 3.0 - Globals ********************/
+body {
+  font-family: 'Muli', sans-serif;
+  font-size: 1.5rem;
+  cursor: default;
+  color: #434345;
+  background-color: #000;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.4em;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/******************** 4.0 - Root Container ********************/
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/******************** 5.0 - Header ********************/
+.header {
+  /*background-color: #191919;*/
+  justify-self: flex-start;
+  display: flex;
+  justify-content: space-between;
+  /*box-shadow: 0px 10px 18px #888888;*/
+}
+
+.logo-github {
+  margin: 0 auto;
+  /* margin-right: 50px; */
+}
+
+.header-right {
+  display: none;
+}
+.header-left {
+  display: none;
+}
+
+/******************** 6.0 - Main ********************/
+.pageContent {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-left {
+  width: 308px;
+  background-image: url(../images/content-left.png);
+  min-height: 412px;
+  background-repeat: repeat-y;
+}
+
+.content-right {
+  width: 308px;
+  background-image: url(../images/content-right.png);
+  min-height: 445px;
+  background-repeat: repeat-y;
+}
+
+.primary-link {
+  /*text-align: center;*/
+  /*margin: 60px;*/
+  font-size: 2em;
+}
+
+.primary-link a {
+  color: #52b957;
+  transition: 0.3s;
+}
+
+.primary-link a:hover {
+  color: #f0f9f0;
+}
+
+.back-btn {
+  font-size: 2em;
+  color: #52b957;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  color: #f0f9f0;
+}
+
+.main-container {
+  max-width: 800px;
+  width: 100%;
+}
+
+.main-box {
+  background-color: #161716;
+  border-radius: 10px 10px 0 0;
+}
+.text-box {
+  background-color: #fff;
+}
+.title-box {
+  font-size: 1.8em;
+  color: #b1b1b1;
+}
+
+.repo-box {
+  border-radius: 5px;
+  border: 1px solid #b1b1b1;
+}
+
+.content-left {
+  display: none;
+}
+.content-right {
+  display: none;
+}
+
+#root {
+  margin: 10px;
+}
+
+.visible {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.numberCircle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+  background: #fff;
+  border: 3px solid #d9d9d9;
+  color: #a0a0a0;
+  text-align: center;
+  font: 10px Arial, sans-serif;
+}
+
+/******************** 7.0 - Footer ********************/
+.footer {
+  justify-self: self-end;
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-name-input {
+  width: 311px;
+}
+
+.first-name-input:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+.search-github-button {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.2s;
+  transition-delay: 0.1s;
+  backface-visibility: hidden;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.first-name-input,
+.search-github-button {
+  color: #ffffff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  padding: 17px 24px;
+  font-size: 17px;
+  line-height: 32px;
+  border-radius: 5px;
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 900;
+  vertical-align: middle;
+  user-select: none;
+  margin: 5px;
+}
+
+.search-github-button:before {
+  left: -20px;
+  transform: translate(-50%, -50%);
+}
+
+.search-github-button:after {
+  right: -20px;
+  transform: translate(50%, -50%);
+}
+
+.search-github-button:before,
+.search-github-button:after {
+  position: absolute;
+  top: 50%;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.search-github-button:hover {
+  color: #434345;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  outline: none;
+  transition-delay: 0.45s;
+}
+
+.search-github-button:hover:before {
+  -webkit-animation: criss-cross-left 0.8s;
+  animation: criss-cross-left 0.8s;
+}
+
+.search-github-button:hover:after {
+  -webkit-animation: criss-cross-right 0.8s;
+  animation: criss-cross-right 0.8s;
+}
+
+.copyright {
+  text-align: center;
+  /* margin-left: 100px; */
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.copyright a {
+  color: #434345;
+  transition: 0.3s;
+}
+
+.copyright a:hover {
+  color: #b1b1b1;
+}
+
+.footer-right {
+  display: none;
+}
+.footer-left {
+  display: none;
+}
+
+/******************** 8.0 - Media Query and Animation ********************/
+@media only screen and (min-width: 814px) {
+  #root {
+    margin: 0px;
+  }
+  .content-left {
+    display: block;
+  }
+  .content-right {
+    display: block;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .footer-left {
+    display: block;
+  }
+  .header-left {
+    display: block;
+  }
+  .footer-right {
+    display: block;
+  }
+  .header-right {
+    display: block;
+  }
+}
+
+@-webkit-keyframes criss-cross-left {
+  0% {
+    left: -20px;
+  }
+
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  100% {
+    left: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+
+@keyframes criss-cross-left {
+  0% {
+    left: -20px;
+  }
+
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  100% {
+    left: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+
+@-webkit-keyframes criss-cross-right {
+  0% {
+    right: -20px;
+  }
+
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  100% {
+    right: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+
+@keyframes criss-cross-right {
+  0% {
+    right: -20px;
+  }
+
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  100% {
+    right: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+
+.searchBox {
+  margin-top: 40px;
+  background-color: grey;
+}
